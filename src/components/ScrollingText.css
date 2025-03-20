@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    overflow: hidden;
+}
+
+.scroll {
+    white-space: nowrap;
+    margin: 0 2em;
+}
+
+.scroll div {
+    display: flex;
+    gap: 1em;
+}
+
+.scroll p {
+    font-family: outward, sans-serif;
+    font-size: 5em;
+    color: #262523;
+    font-weight: normal;
+    margin-bottom: 0;
+    user-select: none;
+}
+
+.RightToLeft {
+    animation: RightToLeft 10s infinite linear;
+}
+
+@keyframes  RightToLeft {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+}

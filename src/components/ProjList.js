@@ -1,19 +1,11 @@
 import React, { forwardRef } from "react";
 import './ProjList.css';
+import ScrollingText from '../components/ScrollingText';
 
 const ProjList = forwardRef((props, ref) => {
 return (
 <div id="projlist" ref={ref} className="list" {...props}>
-    <hr/>
-    <div className="container">
-        <div className="scroll">
-          <div className="RightToLeft">
-            <p>PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ </p>
-            <p>PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ </p>
-          </div>
-        </div>
-      </div>
-    <hr/>
+    <ScrollingText scrollText={"PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ PROJECTS ▪ "}/>
     <div className="projects">
         <div className="projektinfo">
             <img src={require("../images/medventure.png")} alt="MedVenture"/>

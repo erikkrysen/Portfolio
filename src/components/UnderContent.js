@@ -11,7 +11,7 @@ const UnderContent = ({string}) => {
       startDelay: 200,
     });
     return () => typed.destroy();
-  }, []);
+  }, [string]);
 
   return (
     <div className="undercontent">

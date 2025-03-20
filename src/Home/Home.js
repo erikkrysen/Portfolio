@@ -43,7 +43,7 @@ function Home() {
         <div className="textArea">
             <Title topText="ERIK" bottomText="KRYSÉN"/>
         </div>
-        <UnderContent string="I'M A DESIGNER AND DEVELOPER BASED IN SWEDEN."/>
+        <UnderContent string={"I'M A DESIGNER AND DEVELOPER BASED IN SWEDEN."}/>
         <div className="buttonscontainer">
             <div className="buttons">
             <Button 

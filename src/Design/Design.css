@@ -13,20 +13,20 @@
     font-style: normal;
 }
 
-.content {
+.designContent {
     width: 100vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
-.textArea {
+.designTextArea {
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    padding: 0 0 0 1.5%;
+    justify-content: center;
+    align-items: center;
     color: #262523;
-    width: 20vw;
+    width: 30vw;
     padding-top: 5vh;
 }
 
@@ -41,4 +41,103 @@
     line-height: 0.705;
     height: 100%;
     user-select: none;
+}
+
+.fontSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: left;
+    color: #262523;
+    width: 100vw;
+    padding-top: 5vh;
+}
+
+.fontTextOutward {
+    display: flex;
+    justify-content: baseline;
+    font-family: outward, sans-serif;
+    font-size: calc(5vh + 10vw);
+    color:#262523;
+    margin: 0;
+    padding-left: 1vw;
+    line-height: 0.705;
+    height: 100%;
+    user-select: none;
+}
+
+.fontTextKarrik {
+    display: flex;
+    justify-content: baseline;
+    font-family: Karrik, sans-serif;
+    font-size: calc(5vh + 10vw);
+    color:#262523;
+    margin: 0;
+    padding: 0;
+    line-height: 0.705;
+    height: 100%;
+    user-select: none;
+    padding-top: 5vh;
+}
+
+.fontTextBebas {
+    display: flex;
+    justify-content: baseline;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(5vh + 10vw);
+    color:#262523;
+    margin: 0;
+    padding: 0;
+    line-height: 0.705;
+    height: 100%;
+    user-select: none;
+    padding-top: 5vh;
+}
+
+.colorSection{
+    display: flex;
+    flex-direction: column;
+    color: #262523;
+    width: 100vw;
+}
+
+.highlight{
+    height: 30vh;
+    background-color:#BF4342;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dark{
+    height: 30vh;
+    background-color:#262523;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.light{
+    height: 30vh;
+    background-color:#fff7f0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.colorText {
+    color:#262523;
+    font-family: Karrik, sans-serif;
+    font-size: 6rem;
+    text-align: center;
+}
+
+.colorTextLight {
+    color:#fff7f0;
+    font-family: Karrik, sans-serif;
+    font-size: 6rem;
+    text-align: center;
 }
