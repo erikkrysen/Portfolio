@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    width: 92vw;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.textArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 0 0 0 1.5%;
+    color: #262523;
+    width: 100%;
+    padding-top: 5vh;
+}
+
+.buttonscontainer {
+    width: 62vw;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.buttons {
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: flex-end;
+    margin-left: 7vw;
+}

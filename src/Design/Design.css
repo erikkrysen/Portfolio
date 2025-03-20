@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Karrik';
+    src: url('../fonts/Karrik-Regular.woff2') format('woff2'),
+         url('../fonts/Karrik-Regular.woff') format('woff'),
+         url('../fonts/Karrik-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.content {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.textArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 0 0 0 1.5%;
+    color: #262523;
+    width: 20vw;
+    padding-top: 5vh;
+}
+
+.designTitle {
+    display: flex;
+    justify-content: left;
+    font-family: outward, sans-serif;
+    font-size: calc(10vh + 20vw);
+    color: #BF4342;
+    margin: 0;
+    padding: 0;
+    line-height: 0.705;
+    height: 100%;
+    user-select: none;
+}

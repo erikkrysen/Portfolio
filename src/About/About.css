@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Karrik';
+    src: url('../fonts/Karrik-Regular.woff2') format('woff2'),
+         url('../fonts/Karrik-Regular.woff') format('woff'),
+         url('../fonts/Karrik-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.content {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-background {
+    background-image: url('../images/about-bakgrund.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.textArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 0 0 0 1.5%;
+    color: #262523;
+    width: 20vw;
+    padding-top: 5vh;
+}
+
+.aboutmetitle {
+    display: flex;
+    justify-content: left;
+    font-family: outward, sans-serif;
+    font-size: calc(10vh + 20vw);
+    color: #BF4342;
+    margin: 0;
+    padding: 0;
+    line-height: 0.705;
+    height: 100%;
+    user-select: none;
+}
+
+.aboutmeinfo {
+    width: 40vw;
+    font-size: 1.5vw;
+    color: #fff7f0;
+}
+
+.aboutmeinfo p {
+    margin-top: 2vh;
+    user-select: none;
+}
+
+.profile-pic {
+    width: 25vw;
+    background-color: #BF4342;
+    object-fit: cover;
+    border-radius: 100%;
+}

@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Karrik';
+    src: url('../fonts/Karrik-Regular.woff2') format('woff2'),
+         url('../fonts/Karrik-Regular.woff') format('woff'),
+         url('../fonts/Karrik-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'outward';
+    src: url('../fonts/outward-block-webfont.woff2') format('woff2'),
+         url('../fonts/outward-block-webfont.woff') format('woff'),
+         url('../fonts/outward-block-webfont.ttf') format('truetype')
+         url('../fonts/outward-block-webfont.svg') format('svg'),
+         url('../fonts/outward-block-webfont.eot') format('eot');
+    font-weight: normal;
+    font-style: normal;
+}
+
+header {
+    position: fixed;
+    align-items: center;
+    padding-right: 5vw;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    padding: 0 30px 0 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 110;
+    background-color: #fff7f0;
+    border-bottom: 1px solid #262523;
+    border-top: 1px solid #262523;
+    font-family: Karrik, sans-serif;
+    user-select: none;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 5vw;
+}
+
+.navname {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: outward, sans-serif;
+    position: relative;
+    width: 120px;
+    min-width: 120px;
+    height: 100%;
+    font-size: 4.1em;
+    color: #262523;
+    border-right: 1px solid #262523;
+}

@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.undercontent {
+    height: 25vh;
+    width: 30vw;
+    display: flex;
+    justify-content: left;
+    position: absolute;
+    margin-left: 16vw;
+    margin-bottom: 9vh;
+}
+
+.undercontent-intro {
+    max-width: 30vw;
+    align-content: start;
+}
+
+.undercontent-intro h2 {
+    font-size: 1.5vw;
+    color: #262523;
+    user-select: none;
+}
