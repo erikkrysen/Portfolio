@@ -64,7 +64,7 @@ function Home() {
             <div className="buttons">
             <Button 
                 buttonStyle="buttonPhoto" 
-                to=".."
+                to="/Photo"
                 >
                     <div className="buttonText">PHOTOGRAPHY</div>
             </Button>

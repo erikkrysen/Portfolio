@@ -4,7 +4,7 @@ import './About.css'
 
 function About() {
   return (
-    <Wrapper wrapperStyle="image-background">
+    <Wrapper wrapperStyle="about-background">
       <div className="content">
         <div className="textArea">
           <div className="aboutmetitle">ABOUT<br/>ME</div>

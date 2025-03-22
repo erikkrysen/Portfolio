@@ -22,7 +22,7 @@ function Design() {
         <div className="fontTextBebas">Bebas Neue</div>
       </div>
       <div>
-        <ScrollingText scrollText={"COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ "}/>
+        <ScrollingText scrollText="COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ "/>
       </div>
       <div className="colorSection">
         <div className="highlight">

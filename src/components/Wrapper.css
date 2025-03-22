@@ -27,8 +27,15 @@
     background-color: #fff7f0;
 }
 
-.image-background {
+.about-background {
     background-image: url('../images/about-bakgrund.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.photo-background {
+    background-image: url('../images/grain2.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
