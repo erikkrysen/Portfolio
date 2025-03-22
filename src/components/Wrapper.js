@@ -1,7 +1,7 @@
 import React from "react";
 import './Wrapper.css';
 
-const STYLES = ["normal-background", "image-background"];
+const STYLES = ["normal-background", "about-background", "photo-background"];
 
 const Wrapper = ({ wrapperStyle, children }) => {
   

@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import './Navbar.css';
 import './Button.css';
 import {Button} from './Button';
@@ -8,7 +8,19 @@ import { useScrollContext } from "../context/ScrollContext.js";
 
 function Navbar(){
   const location = useLocation();
+  const navigate = useNavigate();
   const { activeSection } = useScrollContext();
+
+  const projectsClick = () => {
+    if (location.pathname === "/") {
+      scrollToPosition("ProjList");
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        scrollToPosition("ProjList");
+      }, 100);
+    }
+  };
   
   return (
       <>
@@ -25,7 +37,7 @@ function Navbar(){
               <Button 
                 buttonStyle={activeSection === "projlist" ? "buttonNavActive" : "buttonNav"}
                 to=".."
-                onClick={scrollToPosition}
+                onClick={projectsClick}
               >
                 PROJECTS
               </Button>
