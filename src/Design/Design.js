@@ -1,6 +1,7 @@
 import React from 'react';
 import Wrapper from '../components/Wrapper';
 import ScrollingText from '../components/ScrollingText';
+import Title from '../components/Title'
 import './Design.css'
 
 function Design() {
@@ -8,7 +9,7 @@ function Design() {
     <Wrapper>
       <div className="designContent">
         <div className="designTextArea">
-          <div className="designTitle">DESIGN</div>
+          <Title topText="DESIGN" titleStyle="aboutmetitle"/>
         </div>
       </div>
       <div>

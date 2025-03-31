@@ -3,7 +3,6 @@ import {Button} from '../components/Button';
 import Title from '../components/Title';
 import UnderContent from "../components/UnderContent";
 import './Home.css';
-import '../components/Button.css';
 import Wrapper from '../components/Wrapper';
 import ProjList from '../components/ProjList';
 import { useScrollContext } from "../context/ScrollContext";
@@ -23,7 +22,7 @@ function Home() {
           setActiveSection("home");
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.75 }
     );
 
     if (currentProjRef) {

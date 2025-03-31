@@ -1,13 +1,14 @@
 import React from 'react';
 import Wrapper from '../components/Wrapper';
+import Title from '../components/Title'
 import './About.css'
 
 function About() {
   return (
     <Wrapper wrapperStyle="about-background">
-      <div className="content">
-        <div className="textArea">
-          <div className="aboutmetitle">ABOUT<br/>ME</div>
+      <div className="aboutContent">
+        <div className="aboutTextArea">
+          <Title topText="ABOUT" bottomText="ME" titleStyle="aboutmetitle"/>
         </div>
         <div className="aboutmeinfo">
           <p>

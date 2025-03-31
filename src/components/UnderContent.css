@@ -20,7 +20,23 @@
 }
 
 .undercontent-intro h2 {
-    font-size: 1.5vw;
+    font-size: calc(1vh + 1vw);
     color: #262523;
     user-select: none;
+}
+
+@media (orientation: portrait){
+    .undercontent {
+        height: 25vh;
+        width: 30vw;
+        display: flex;
+        justify-content: left;
+        position: absolute;
+        margin-left: calc(5vh + 18vw);
+        margin-top: calc(5vh + 4vw);
+    }
+
+    .undercontent h2 {
+        font-size: calc(1vw + 1vh);
+    }
 }

@@ -13,7 +13,7 @@
     font-style: normal;
 }
 
-.content {
+.aboutContent {
     width: 100vw;
     display: flex;
     justify-content: space-between;
@@ -27,7 +27,7 @@
     background-position: center;
 }
 
-.textArea {
+.aboutTextArea {
     display: flex;
     flex-direction: column;
     justify-content: left;
@@ -35,19 +35,6 @@
     color: #262523;
     width: 20vw;
     padding-top: 5vh;
-}
-
-.aboutmetitle {
-    display: flex;
-    justify-content: left;
-    font-family: outward, sans-serif;
-    font-size: calc(10vh + 20vw);
-    color: #BF4342;
-    margin: 0;
-    padding: 0;
-    line-height: 0.705;
-    height: 100%;
-    user-select: none;
 }
 
 .aboutmeinfo {
@@ -66,4 +53,33 @@
     background-color: #BF4342;
     object-fit: cover;
     border-radius: 100%;
+}
+
+@media (orientation: portrait){
+    .aboutContent {
+        flex-direction: column;
+        height: 70vh;
+    }
+
+    .aboutTextArea {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        color: #262523;
+        width: 100vw;
+        padding-top: 5vh;
+    }
+
+    .aboutmeinfo {
+        width: 80vw;
+        font-size: 5vw;
+        color: #fff7f0;
+    }
+    
+    .profile-pic {
+        width: 50vw;
+        background-color: #BF4342;
+        object-fit: cover;
+        border-radius: 100%;
+    }
 }

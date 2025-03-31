@@ -40,3 +40,11 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+@media (orientation: portrait){
+    .wrapper{
+        padding-top: 6vh;
+        height: auto;
+        overflow-y: scroll;
+    }
+}

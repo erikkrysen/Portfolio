@@ -30,19 +30,6 @@
     padding-top: 5vh;
 }
 
-.designTitle {
-    display: flex;
-    justify-content: left;
-    font-family: outward, sans-serif;
-    font-size: calc(10vh + 20vw);
-    color: #BF4342;
-    margin: 0;
-    padding: 0;
-    line-height: 0.705;
-    height: 100%;
-    user-select: none;
-}
-
 .fontSection{
     display: flex;
     flex-direction: column;
@@ -140,4 +127,28 @@
     font-family: Karrik, sans-serif;
     font-size: 6rem;
     text-align: center;
+}
+
+@media (orientation: portrait){
+    .content {
+        flex-direction: column;
+        height: 70vh;
+    }
+
+    .textArea {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        color: #262523;
+        width: 100vw;
+        padding-top: 5vh;
+    }
+
+    .colorText {
+        font-size: 20vw;
+    }
+    
+    .colorTextLight {
+        font-size: 20vw;
+    }
 }

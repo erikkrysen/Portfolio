@@ -5,7 +5,7 @@ const ScrollingText = ({scrollText}) => {
 return (
     <>
     <hr/>
-    <div className="container">
+    <div className="scrollContainer">
         <div className="scroll">
           <div className="RightToLeft">
             <p>{scrollText}</p>

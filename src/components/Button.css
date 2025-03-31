@@ -122,3 +122,33 @@ a{
     border:none;
     color:#262523;
 }
+
+@media (orientation: portrait){
+    button {
+        align-items: center;
+        text-align: center;
+    }
+
+    .buttonPhoto  {
+        width: 95vw;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .buttonCode  {
+        width: 95vw;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .buttonDesign  {
+        width: 95vw;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .buttonText{
+        font-size: 12vw;
+        margin-left: 0;
+    }
+}
