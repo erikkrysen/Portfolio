@@ -1,3 +1,3 @@
-# Portfolio website or Erik Krysén
+# Portfolio website of Erik Krysén
 
-Made in React.
+Made with React.
