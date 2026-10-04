@@ -14,11 +14,45 @@
 }
 
 .contactContent {
+    position: relative;
+    z-index: 1;
     width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
+.scatter {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.scatterLetter {
+    position: absolute;
+    height: auto;
+    fill: #fff7f0;
+    stroke: #262523;
+    stroke-width: 1px;
+    opacity: 1;
+}
+
+.scatterLetter polyline {
+    fill: none;
+}
+
+.scatterStamp {
+    fill: #BF4342;
+    stroke: none;
+}
+
+.scatterLetter:nth-child(1) { left: 40%; top: 12%; width: 20vw; transform: rotate(14deg); }
+.scatterLetter:nth-child(2) { left: 78%; top: 6%; width: 22vw; transform: rotate(-9deg); }
+.scatterLetter:nth-child(3) { left: 86%; top: 52%; width: 20vw; transform: rotate(22deg); }
+.scatterLetter:nth-child(4) { left: 36%; top: 66%; width: 21vw; transform: rotate(-17deg); }
+.scatterLetter:nth-child(5) { left: 62%; top: 78%; width: 23vw; transform: rotate(6deg); }
+.scatterLetter:nth-child(6) { left: 55%; top: -6%; width: 18vw; transform: rotate(-24deg); }
 
 .image-background {
     background-image: url('../images/about-bakgrund.png');
@@ -37,22 +71,214 @@
     padding-top: 5vh;
 }
 
-.linkedin-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.mail {
+    --w: min(50vw, 78vh);
+    flex-shrink: 0;
+    width: var(--w);
+    padding-top: calc(var(--w) * 0.46);
+    margin-right: 4vw;
+    font-family: Karrik, sans-serif;
+    font-size: calc(var(--w) * 0.032);
+    font-weight: bold;
+    line-height: 1.4;
+    color: #262523;
 }
 
-.linkedin-logo {
+.envelope {
+    position: relative;
+    aspect-ratio: 3 / 2;
+    perspective: 1000px;
+    transform: translateY(calc(var(--w) * -0.23)) rotate(-3deg);
+    transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.mail:hover .envelope,
+.mail:focus-within .envelope,
+.mailOpen .envelope {
+    transform: none;
+}
+
+.envelope::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    border: solid transparent;
+    border-width: 0 10px 10px;
+    border-image: repeating-linear-gradient(-45deg, #BF4342 0 12px, #262523 12px 24px) 10;
+    pointer-events: none;
+}
+
+.envBack {
+    position: absolute;
+    inset: 0;
+    background-color: #fff7f0;
+    border: 1px solid #262523;
+}
+
+.envelope svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: #fff7f0;
+    stroke: #262523;
+    stroke-width: 1px;
+    vector-effect: non-scaling-stroke;
+    pointer-events: none;
+}
+
+.envelope svg * {
+    vector-effect: non-scaling-stroke;
+}
+
+.envFlap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 58%;
+    z-index: 4;
+    transform-origin: top;
+    transition: transform 0.3s ease, z-index 0s 0.3s;
+}
+
+.seal {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 13%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #BF4342;
+    color: #fff7f0;
+    font-size: 1.3em;
+    transform: translate(-50%, -70%);
+    transition: opacity 0.15s ease;
+}
+
+.letter {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 6%;
+    height: 90%;
+    z-index: 2;
+    padding: 5% 7%;
+    background-color: #fff7f0;
+    border: 1px solid #262523;
+    transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.letter p {
+    margin-bottom: 0.5em;
+}
+
+.letter .letterHead {
+    padding-bottom: 0.1em;
+    border-bottom: 1px solid #262523;
+    font-family: outward, sans-serif;
+    font-size: 3em;
+    font-weight: normal;
+    line-height: 0.85;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.2em;
+}
+
+.letterLinks {
+    display: flex;
+    gap: 1.2em;
+}
+
+.letter a {
+    display: block;
+    width: fit-content;
+    padding: 0 0.2em;
+    margin-left: -0.2em;
+    font-size: 1.7em;
+    line-height: 1.25;
+    color: #262523;
+    text-decoration: underline;
+}
+
+.letter a:hover, .letter a:focus-visible {
+    background-color: #BF4342;
+    color: #fff7f0;
+    text-decoration: none;
+    outline: none;
+}
+
+.letter .letterSign {
+    margin-top: 0.6em;
+    text-align: right;
+}
+
+.envPocket {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+}
+
+.envOpen {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
     background: none;
-    width: 8vw;
-    padding-bottom: 3vh;
+    border: none;
+    cursor: pointer;
+}
+
+.mail:hover .envFlap,
+.mail:focus-within .envFlap,
+.mailOpen .envFlap {
+    z-index: 1;
+    transform: rotateX(180deg);
+}
+
+.mail:hover .seal,
+.mail:focus-within .seal,
+.mailOpen .seal {
+    opacity: 0;
+}
+
+.mail:hover .letter,
+.mail:focus-within .letter,
+.mailOpen .letter {
+    transform: translateY(-75%);
+    transition-delay: 0.25s;
+}
+
+.mail:hover .envOpen,
+.mail:focus-within .envOpen,
+.mailOpen .envOpen {
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .envelope, .envFlap, .letter, .seal {
+        transition: none;
+    }
 }
 
 @media (orientation: portrait){
     .contactContent {
         flex-direction: column;
-        height: 50vh;
+        padding-bottom: 8vh;
+    }
+
+    .scatterLetter:nth-child(1) { left: -12%; top: 50%; width: 48vw; transform: rotate(12deg); }
+    .scatterLetter:nth-child(2) { left: 62%; top: 44%; width: 46vw; transform: rotate(-14deg); }
+    .scatterLetter:nth-child(3) { left: 70%; top: 80%; width: 50vw; transform: rotate(20deg); }
+    .scatterLetter:nth-child(4) { left: -15%; top: 84%; width: 52vw; transform: rotate(-10deg); }
+    .scatterLetter:nth-child(5) { left: 30%; top: 93%; width: 44vw; transform: rotate(5deg); }
+    .scatterLetter:nth-child(6) { display: none; }
+
+    .mail {
+        --w: 88vw;
+        margin-right: 0;
+        font-size: calc(var(--w) * 0.04);
     }
 
     .contactTextArea {
@@ -73,16 +299,5 @@
         align-items: center;
         margin-right: 0;
         margin-left: 0;
-    }
-
-    .linkedin-container {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-    }
-    
-    .linkedin-logo {
-        width: 15vw;
-        padding-bottom: 1.5vh;
     }
 }

@@ -12,11 +12,10 @@ function About() {
         </div>
         <div className="aboutmeinfo">
           <p>
-              Hi, I&apos;m <strong>Erik Krysén</strong>! I&apos;m a <em>Software Developer / Virtual Reality Developer</em> and 
-              I&apos;m currently studying my 5th and final year of Computer Science at Lund University.
+              Hi, I&apos;m <strong>Erik Krysén</strong>! I&apos;m a <em>Software Developer / Virtual Reality Developer</em>.
           </p>
           <p>
-              Outside of studies and work, I love exercise, design and photography.
+              Outside of work, I love exercise, design and photography.
           </p>
         </div>
         <div className="profil">
