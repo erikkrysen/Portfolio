@@ -6,48 +6,30 @@
 }
 
 .scroll {
-    white-space: nowrap;
-    margin: 0 2em;
-}
-
-.scroll div {
     display: flex;
-    gap: 1em;
 }
 
-.scroll p {
+.group {
+    display: flex;
+    flex-shrink: 0;
+    animation: marquee linear infinite;
+}
+
+.group span {
+    flex-shrink: 0;
+    white-space: pre;
     font-family: outward, sans-serif;
     font-size: 5em;
     color: #262523;
-    font-weight: normal;
-    margin-bottom: 0;
     user-select: none;
 }
 
-.RightToLeft {
-    animation: RightToLeft 10s infinite linear;
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-100%); }
 }
 
-@keyframes  RightToLeft {
-    from {
-      transform: translateX(0%);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-}
-
-@media (orientation: portrait){
-
-    .scrollContainer {
-        height: 7vh;
-    }
-    
-    .scroll div {
-        gap: 1vh;
-    }
-    
-    .scroll p {
-        font-size: calc(5vh + 5vw);
-    }
+@media (orientation: portrait) {
+    .scrollContainer { height: 7vh; }
+    .group span { font-size: calc(5vh + 5vw); }
 }

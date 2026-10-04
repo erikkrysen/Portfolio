@@ -1,96 +1,80 @@
-import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
 import "./Navbar.css";
-import "./Button.css";
-import { Button } from "./Button";
-import { scrollToTop, scrollToPosition } from "../js/scroll.js";
-import { useScrollContext } from "../context/ScrollContext.js";
+
+const TABS = [
+  ["home", "HOME"],
+  ["projects", "PROJECTS"],
+  ["design", "DESIGN"],
+  ["photo", "PHOTO"],
+  ["about", "ABOUT ME"],
+  ["contact", "CONTACT"],
+];
+
+const DOCK = 56;
+const TAB_HEIGHT = 50;
 
 function Navbar() {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const { activeSection } = useScrollContext();
-  const [isPortrait, setIsPortrait] = useState(window.innerWidth < window.innerHeight);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState("home");
+  const [incoming, setIncoming] = useState(null);
+  const tabsRef = useRef(null);
+  const riderRef = useRef(null);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsPortrait(window.innerWidth < window.innerHeight);
+    const update = () => {
+      const tops = TABS.map(([id]) => [id, document.getElementById(id).getBoundingClientRect().top]);
+
+      setActive(tops.findLast(([, top]) => top <= DOCK)?.[0] ?? "home");
+
+      const next = tops.find(([, top]) => top > DOCK && top < window.innerHeight);
+      setIncoming(next?.[0] ?? null);
+      if (next) {
+        const slot = tabsRef.current.querySelector(`[href="#${next[0]}"]`);
+        const left = slot.getBoundingClientRect().left;
+        riderRef.current.style.transform = `translate(${left}px, ${next[1] - TAB_HEIGHT}px)`;
+      }
     };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
   }, []);
 
-  const projectsClick = () => {
-    if (location.pathname === "/") {
-      scrollToPosition("ProjList");
-    } else {
-      navigate("/");
-      setTimeout(() => {
-        scrollToPosition("ProjList");
-      }, 100);
-    }
-    setMenuOpen(false);
-  };
+  useEffect(() => {
+    const rail = tabsRef.current;
+    const tab = rail.querySelector(".tabActive");
+    const left = tab.offsetLeft - (rail.clientWidth - tab.offsetWidth) / 2;
+    rail.scrollTo({ left });
+  }, [active]);
 
   return (
     <header>
-      <div className="header-container">
-        <div onClick={scrollToTop} className="navname">ERIK KRYSÉN</div>
-        {isPortrait && (
-            <button className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? "✖" : "☰"}
-          </button>
-        )}
-      </div>
-      <div className="nav-container">
-        {!isPortrait && (
-          <div className="nav">
-            <Button buttonStyle={activeSection === "home" && location.pathname === "/" ? "buttonNavActive" : "buttonNav"} to=".." onClick={scrollToTop}>HOME</Button>
-            <Button buttonStyle={activeSection === "projlist" && location.pathname === "/" ? "buttonNavActive" : "buttonNav"} to=".." onClick={projectsClick}>PROJECTS</Button>
-            <Button buttonStyle={location.pathname === "/About" ? "buttonNavActive" : "buttonNav"} to="/About">ABOUT ME</Button>
-            <Button buttonStyle={location.pathname === "/Contact" ? "buttonNavActive" : "buttonNav"} to="/Contact">CONTACT</Button>
-          </div>
-        )}
-      </div>
-      {isPortrait && menuOpen && (
-        <div className="dropdown-nav">
-          <Button 
-            buttonStyle={activeSection === "home" && location.pathname === "/" ? "buttonNavActive" : "buttonNav"} 
-            to=".." 
-            onClick={() => {
-              scrollToTop();
-              setMenuOpen(false);
-            }}
+      <a href="#home" className="navname">ERIK KRYSÉN</a>
+      <nav className="tabs" ref={tabsRef}>
+        {TABS.map(([id, label], index) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            className={id === active ? "tab tabActive" : "tab"}
+            aria-current={id === active ? "true" : undefined}
+            style={{ zIndex: id === active ? TABS.length + 1 : TABS.length - index, "--i": index }}
           >
-            HOME
-          </Button>
-          <Button 
-            buttonStyle={activeSection === "projlist" && location.pathname === "/" ? "buttonNavActive" : "buttonNav"} 
-            to=".." 
-            onClick={() => {
-              projectsClick();
-              setMenuOpen(false);
-            }}
-          >
-            PROJECTS
-          </Button>
-          <Button 
-            buttonStyle={location.pathname === "/About" ? "buttonNavActive" : "buttonNav"} 
-            to="/About" 
-            onClick={() => setMenuOpen(false)}
-          >
-            ABOUT ME
-          </Button>
-          <Button 
-            buttonStyle={location.pathname === "/Contact" ? "buttonNavActive" : "buttonNav"} 
-            to="/Contact" 
-            onClick={() => setMenuOpen(false)}
-          >
-            CONTACT
-          </Button>
-        </div>
-      )}
+            {label}
+          </a>
+        ))}
+      </nav>
+      <a
+        ref={riderRef}
+        href={`#${incoming}`}
+        className="tab tabActive tabRider"
+        aria-hidden="true"
+        tabIndex={-1}
+        style={{ visibility: incoming ? "visible" : "hidden" }}
+      >
+        {TABS.find(([id]) => id === incoming)?.[1]}
+      </a>
     </header>
   );
 }

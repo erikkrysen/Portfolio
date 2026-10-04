@@ -10,8 +10,7 @@ titleStyle
 }) => {
 const checkTitleStyle = STYLES.includes(titleStyle) ? titleStyle : STYLES[0];
 return (
-    <>
-      <div className={`${checkTitleStyle}`} >{topText}
+    <div className={`${checkTitleStyle}`} >{topText}
         {bottomText && (
           <>
             <br />
@@ -19,7 +18,6 @@ return (
           </>
         )}
       </div>
-    </>
   );
 };
 

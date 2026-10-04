@@ -1,0 +1,13 @@
+a, button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+img, button {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+:focus-visible {
+    outline: 2px solid #BF4342;
+    outline-offset: 2px;
+}

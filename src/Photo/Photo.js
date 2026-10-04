@@ -1,18 +1,34 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import Wrapper from "../components/Wrapper";
 import "./Photo.css";
 
+export const galleryImages = [
+  ["redcar.jpg", "RED CAR"],
+  ["field.jpg", "FIELD"],
+  ["greenhouse.jpg", "GREENHOUSE"],
+  ["hiking.jpg", "HIKING"],
+  ["infanta.png", "INFANTA"],
+  ["kebnekaise.jpg", "KEBNEKAISE"],
+  ["metro.jpg", "METRO"],
+  ["parking.jpg", "PARKING"],
+  ["beach.png", "BEACH"],
+  ["roof.png", "ROOF"],
+  ["statue.png", "STATUE"],
+  ["sunset.jpg", "SUNSET"],
+  ["swan.png", "SWAN"],
+  ["valencia.png", "VALENCIA"],
+  ["volvocars.jpg", "VOLVO CARS"],
+  ["water.png", "WATER"],
+  ["window.png", "WINDOW"],
+  ["about-bakgrund.png", "FOREST"],
+  ["jinx.png", "JINX"],
+  ["train.jpg", "TRAIN"],
+];
+
 function Photo() {
-  const [hoveredIndex, setHoveredIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(0);
   const indicatorRef = useRef(null);
   const galleryContainerRef = useRef(null);
-
-  const defaultItemFlex = "0 1 20px";
-  const hoverItemFlex = "1 1 40vw";
-
-  const handleMouseEnter = (index) => {
-    setHoveredIndex(index);
-  };
 
   const handleMouseMove = (e) => {
     if (galleryContainerRef.current && indicatorRef.current) {
@@ -20,33 +36,6 @@ function Photo() {
       indicatorRef.current.style.left = `${e.clientX - containerRect.left}px`;
     }
   };
-
-  useEffect(() => {
-    setHoveredIndex(0);
-  }, []);
-
-  const galleryImages = [
-    "redcar.jpg",
-    "field.jpg",
-    "greenhouse.jpg",
-    "hiking.jpg",
-    "infanta.png",
-    "kebnekaise.jpg",
-    "metro.jpg",
-    "parking.jpg",
-    "beach.png",
-    "roof.png",
-    "statue.png",
-    "sunset.jpg",
-    "swan.png",
-    "valencia.png",
-    "volvocars.jpg",
-    "water.png",
-    "window.png",
-    "about-bakgrund.png",
-    "jinx.png",
-    "train.jpg",
-  ];
 
   return (
     <Wrapper wrapperStyle="photo-background">
@@ -57,17 +46,18 @@ function Photo() {
       >
         <div className="indicator" ref={indicatorRef}></div>
         <div className="gallery">
-          {galleryImages.map((image, index) => (
-            <div
-              key={index}
-              className="gallery-item"
-              style={{
-                flex: hoveredIndex === index ? hoverItemFlex : defaultItemFlex,
-              }}
-              onMouseEnter={() => handleMouseEnter(index)}
+          {galleryImages.map(([image, label], index) => (
+            <button
+              key={image}
+              type="button"
+              className={index === openIndex ? "gallery-item gallery-itemOpen" : "gallery-item"}
+              onMouseEnter={() => setOpenIndex(index)}
+              onFocus={() => setOpenIndex(index)}
+              onClick={() => setOpenIndex(index)}
             >
+              <span className="spine">{label}</span>
               <img src={require(`../images/${image}`)} alt="" />
-            </div>
+            </button>
           ))}
         </div>
       </div>

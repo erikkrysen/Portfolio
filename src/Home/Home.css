@@ -35,10 +35,48 @@
     align-items: flex-end;
 }
 
+.listing {
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 2vh 1.5% 4vh;
+    font-size: calc(1vh + 1vw);
+    font-weight: bold;
+    line-height: 1.3;
+    color: #262523;
+}
+
+.listingRow {
+    display: grid;
+    grid-template-columns: 9em auto;
+    padding: 0 0.4em;
+    color: #262523;
+    text-decoration: none;
+}
+
+a.listingRow:hover, a.listingRow:focus-visible {
+    background-color: #BF4342;
+    color: #fff7f0;
+    outline: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .listingRow {
+        animation: print 10ms calc(2.2s + var(--i, 0) * 90ms) backwards;
+    }
+}
+
+@keyframes print {
+    from { visibility: hidden; }
+}
+
 @media (orientation: portrait){
+    .listing {
+        font-size: calc(1vw + 1vh);
+        padding-top: 6vh;
+    }
+
     .content {
         flex-direction: column;
-        height: 100vh;
     }
 
     .textArea {

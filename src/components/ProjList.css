@@ -9,11 +9,32 @@ img {
     margin-top: 2vh;
 }
 
+.projektinfo {
+    width: 25%;
+    margin: 3vh 1.5%;
+    background-color: #fff7f0;
+    border: 1px solid #262523;
+}
+
+.projektinfo img {
+    display: block;
+    width: 100%;
+    padding: 0;
+    background: none;
+}
+
+.projektinfo figcaption {
+    padding: 8px 12px;
+    border-top: 1px solid #262523;
+    font-family: Karrik, sans-serif;
+    color: #262523;
+}
+
 @media (orientation: portrait){
     img {
         width: 50%;
     }
-    .list {
-        margin-top: 40vh;
+    .projektinfo {
+        width: 50%;
     }
 }

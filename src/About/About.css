@@ -48,11 +48,16 @@
     user-select: none;
 }
 
+.profil {
+    margin-right: 4vw;
+}
+
 .profile-pic {
     width: 25vw;
-    background-color: #BF4342;
+    background-color: #fff7f0;
     object-fit: cover;
-    border-radius: 100%;
+    transform: rotate(2deg);
+    box-shadow: 0 6px 16px rgba(38, 37, 35, 0.4);
 }
 
 @media (orientation: portrait){
@@ -76,10 +81,11 @@
         color: #fff7f0;
     }
     
+    .profil {
+        margin-right: 0;
+    }
+
     .profile-pic {
         width: 50vw;
-        background-color: #BF4342;
-        object-fit: cover;
-        border-radius: 100%;
     }
 }

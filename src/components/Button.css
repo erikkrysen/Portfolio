@@ -62,7 +62,7 @@ a{
     width: 42vw;
     border: solid 1px;
     border-color: #262523;
-    border-radius: 3vw;
+    border-radius: 1.5vw 1.5vw 0 0;
     align-items: left;
 }
 
@@ -72,11 +72,12 @@ a{
     letter-spacing: 1vw;
     flex-direction: row;
     justify-content: flex-start;
-    width: 40.875vw;
-    margin-top: 1.2vh;
+    width: 46vw;
+    margin-top: -4vh;
     border: solid 1px;
     border-color: #262523;
-    border-radius: 3vw;
+    border-radius: 1.5vw 1.5vw 0 0;
+    z-index: 1;
 }
 
 .buttonPhoto  {
@@ -85,11 +86,23 @@ a{
     flex-direction: row;
     justify-content: flex-start;
     width: 50vw;
-    margin-top: 1.2vh;
+    margin-top: -4vh;
     border: solid 1px;
     border-color: #262523;
-    border-radius: 3vw;
+    border-radius: 1.5vw 1.5vw 0 0;
     align-items: left;
+    z-index: 2;
+}
+
+.buttonCode, .buttonDesign, .buttonPhoto {
+    position: relative;
+    transition: transform 0.15s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .buttonCode:hover, .buttonDesign:hover, .buttonPhoto:hover {
+        transform: translateY(-0.8vh);
+    }
 }
 
 .buttonCode:hover {
@@ -131,18 +144,22 @@ a{
 
     .buttonPhoto  {
         width: 95vw;
+        margin-top: -1.5vw;
         align-items: center;
         justify-content: center;
     }
 
-    .buttonCode  {
-        width: 95vw;
+    .buttonCode, .buttonscontainer .buttonCode  {
+        width: 87vw;
+        margin-right: 0;
         align-items: center;
         justify-content: center;
     }
 
     .buttonDesign  {
-        width: 95vw;
+        width: 91vw;
+        margin-top: -1.5vw;
+        margin-right: 0;
         align-items: center;
         justify-content: center;
     }

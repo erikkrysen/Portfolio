@@ -13,7 +13,22 @@
     font-style: normal;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+.anchor {
+    display: block;
+    height: 0;
+}
+
 .wrapper {
+    position: sticky;
+    top: 0;
+    border-top: 4px solid #BF4342;
+    box-shadow: 0 -10px 24px rgba(38, 37, 35, 0.3);
     font-family: Karrik, sans-serif;
     min-height: 100vh;
     display: flex;

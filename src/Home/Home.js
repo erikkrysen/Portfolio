@@ -1,41 +1,20 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import {Button} from '../components/Button';
 import Title from '../components/Title';
 import UnderContent from "../components/UnderContent";
 import './Home.css';
 import Wrapper from '../components/Wrapper';
-import ProjList from '../components/ProjList';
-import { useScrollContext } from "../context/ScrollContext";
+import { galleryImages } from '../Photo/Photo';
+
+const LISTING = [
+  ["projects", "PROJECTS/", "1 FILE"],
+  ["design", "DESIGN/", "3 FONTS, 3 COLOURS"],
+  ["photo", "PHOTO/", `${galleryImages.length} FILES`],
+  ["about", "ABOUT.TXT", "BIO"],
+  ["contact", "CONTACT.TXT", "LINKEDIN"],
+];
 
 function Home() {
-  const { setActiveSection } = useScrollContext();
-  const projectsRef = useRef(null);
-
-  useEffect(() => {
-    const currentProjRef = projectsRef.current;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting) {
-          setActiveSection("projlist");
-        } else {
-          setActiveSection("home");
-        }
-      },
-      { threshold: 0.75 }
-    );
-
-    if (currentProjRef) {
-      observer.observe(currentProjRef);
-    }
-
-    return () => {
-      if (currentProjRef) {
-        observer.unobserve(currentProjRef);
-      }
-    };
-  }, [setActiveSection]);
-
   return (
     <Wrapper>
       <div className="content">
@@ -45,32 +24,40 @@ function Home() {
         <UnderContent string={"I'M A DESIGNER AND DEVELOPER BASED IN SWEDEN."}/>
         <div className="buttonscontainer">
             <div className="buttons">
-            <Button 
-                buttonStyle="buttonCode" 
+            <Button
+                buttonStyle="buttonCode"
                 to="https://github.com/erikkrysen"
                 >
                     <div className="buttonText">CODE</div>
             </Button>
             </div>
             <div className="buttons">
-            <Button 
-                buttonStyle="buttonDesign" 
-                to="/Design"
+            <Button
+                buttonStyle="buttonDesign"
+                to="#design"
                 >
                     <div className="buttonText">DESIGN</div>
             </Button>
             </div>
             <div className="buttons">
-            <Button 
-                buttonStyle="buttonPhoto" 
-                to="/Photo"
+            <Button
+                buttonStyle="buttonPhoto"
+                to="#photo"
                 >
                     <div className="buttonText">PHOTOGRAPHY</div>
             </Button>
             </div>
         </div>
       </div>
-      <ProjList id="projlist" ref={projectsRef}/>
+      <nav className="listing">
+        <div className="listingRow">&gt; LS</div>
+        {LISTING.map(([id, name, detail], index) => (
+          <a key={id} href={`#${id}`} className="listingRow" style={{ "--i": index + 1 }}>
+            <span>{name}</span>
+            <span>{detail}</span>
+          </a>
+        ))}
+      </nav>
     </Wrapper>
   );
 }

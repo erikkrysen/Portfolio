@@ -1,6 +1,5 @@
 import React from 'react';
 import './Button.css';
-import {Link} from 'react-router-dom';
 
 const STYLES = ["buttonNav", "buttonNavActive", "buttonCode", "buttonDesign", "buttonPhoto"];
 
@@ -13,7 +12,7 @@ export const Button = ({
 }) => {
     const checkButtonStyle = STYLES.includes(buttonStyle) ? buttonStyle : STYLES[0];
     return (
-        <Link to={to}>
+        <a href={to}>
           <button 
             className={`${checkButtonStyle}`} 
             type={type} 
@@ -21,6 +20,6 @@ export const Button = ({
           >
             {children}
           </button>
-        </Link>
+        </a>
     )
 }

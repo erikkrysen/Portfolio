@@ -13,7 +13,7 @@ function Design() {
         </div>
       </div>
       <div>
-        <ScrollingText scrollText={"FONTS ▪ FONTS ▪ FONTS ▪ FONTS ▪ FONTS ▪ FONTS ▪ FONTS ▪ FONTS ▪ FONTS ▪ FONTS ▪ FONTS ▪ FONTS ▪ FONTS ▪ "}/>
+        <ScrollingText scrollText={"FONTS ▪ "}/>
       </div>
       <div className="fontSection">
         <div className="fontTextOutward">Outward</div>
@@ -23,7 +23,7 @@ function Design() {
         <div className="fontTextBebas">Bebas Neue</div>
       </div>
       <div>
-        <ScrollingText scrollText="COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ COLORS ▪ "/>
+        <ScrollingText scrollText="COLORS ▪ "/>
       </div>
       <div className="colorSection">
         <div className="highlight">
