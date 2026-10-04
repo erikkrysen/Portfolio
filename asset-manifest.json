@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.6df861e8.css",
-    "main.js": "/static/js/main.fd8a5a22.js",
+    "main.css": "/static/css/main.690e0311.css",
+    "main.js": "/static/js/main.d971becb.js",
     "static/media/grain.png": "/static/media/grain.3d110e2a91790d39eb56.png",
     "static/media/about-bakgrund.png": "/static/media/about-bakgrund.706e0822bda46861e29c.png",
     "static/media/grain2.png": "/static/media/grain2.350b3b7ff3eb73c22425.png",
@@ -44,11 +44,11 @@
     "static/media/Karrik-Regular.woff2": "/static/media/Karrik-Regular.3c1cffe6c63821da3253.woff2",
     "static/media/outward-block-webfont.woff2": "/static/media/outward-block-webfont.3e9a0dc77205583d9c0a.woff2",
     "index.html": "/index.html",
-    "main.6df861e8.css.map": "/static/css/main.6df861e8.css.map",
-    "main.fd8a5a22.js.map": "/static/js/main.fd8a5a22.js.map"
+    "main.690e0311.css.map": "/static/css/main.690e0311.css.map",
+    "main.d971becb.js.map": "/static/js/main.d971becb.js.map"
   },
   "entrypoints": [
-    "static/css/main.6df861e8.css",
-    "static/js/main.fd8a5a22.js"
+    "static/css/main.690e0311.css",
+    "static/js/main.d971becb.js"
   ]
 }
